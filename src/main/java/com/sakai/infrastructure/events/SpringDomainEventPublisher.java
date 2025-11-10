@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -20,11 +21,10 @@ public class SpringDomainEventPublisher implements DomainEventPublisher {
         publisher.publishEvent(domainEvent);
     }
 
-    @Override
     public void publish(AggregateRoot<?> aggregateRoot) {
-        List<DomainEvent> events = aggregateRoot.getDomainEvents();
-        for (DomainEvent event : events) {
-            publish(event);
+        List<Object> events = Collections.singletonList(aggregateRoot.getDomainEvents());
+        for (Object event : events) {
+            publish((DomainEvent) event);
         }
         aggregateRoot.clearDomainEvents();
     }
