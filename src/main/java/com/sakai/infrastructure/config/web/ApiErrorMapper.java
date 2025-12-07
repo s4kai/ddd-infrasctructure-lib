@@ -1,6 +1,6 @@
 package com.sakai.infrastructure.config.web;
 
-import exception.ErrorCode;
+import com.sakai.exception.ErrorCode;
 import org.springframework.http.HttpStatus;
 
 public class ApiErrorMapper {

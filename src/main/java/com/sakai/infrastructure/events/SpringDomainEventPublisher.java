@@ -1,8 +1,8 @@
 package com.sakai.infrastructure.events;
 
-import domain.entity.AggregateRoot;
-import domain.events.DomainEvent;
-import domain.events.DomainEventPublisher;
+import com.sakai.domain.entity.AggregateRoot;
+import com.sakai.domain.events.DomainEvent;
+import com.sakai.domain.events.DomainEventPublisher;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
